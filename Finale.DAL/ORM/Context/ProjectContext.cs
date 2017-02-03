@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Context
 {
-    class ProjectContext : DbContext
+    public class ProjectContext : DbContext
     {
         public ProjectContext()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    class Product
+    public class Product
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }

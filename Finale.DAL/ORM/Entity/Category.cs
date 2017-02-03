@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    class Category
+    public class Category
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }

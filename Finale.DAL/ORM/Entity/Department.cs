@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    class Department
+    public class Department
     {
+
         public int DepartmentID { get; set; }
         public string DepartmentName { get; set; }
 

@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{255110F4-CD9B-439B-A837-D0B0715478BC}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{5F3677BE-214A-4EA3-A3FE-4195DF10BAC9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Finale.BLL</RootNamespace>
-    <AssemblyName>Finale.BLL</AssemblyName>
+    <RootNamespace>Bll_Tes</RootNamespace>
+    <AssemblyName>Bll Tes</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,18 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\DepartmentRepository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Finale.DAL\Finale.DAL.csproj">
-      <Project>{b1733220-c8bc-4a9e-b8b8-363118c32429}</Project>
-      <Name>Finale.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Finale.BLL\Finale.BLL.csproj">
+      <Project>{255110f4-cd9b-439b-a837-d0b0715478bc}</Project>
+      <Name>Finale.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Finale.DAL\Finale.DAL.csproj">
+      <Project>{b1733220-c8bc-4a9e-b8b8-363118c32429}</Project>
+      <Name>Finale.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

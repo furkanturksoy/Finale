@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    class CustomerDetails
+    public class CustomerDetails
     {
         [Key()]
         [ForeignKey("Customer")]

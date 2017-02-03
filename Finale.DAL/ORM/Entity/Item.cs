@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    class Item
+    public class Item
     {
         [Key()]
         public int ItemID { get; set; }

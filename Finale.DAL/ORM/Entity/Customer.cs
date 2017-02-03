@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    class Customer
+    public class Customer
     {
         public int CustomerID { get; set; }
 
