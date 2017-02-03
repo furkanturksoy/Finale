@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 
 namespace Finale.BLL.Repository
 {
-    
-    public class DepartmentRepository
+    class CategoryRepository
     {
        
 

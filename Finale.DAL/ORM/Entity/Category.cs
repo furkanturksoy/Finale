@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    public class Category
+    public class Category : Base
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
 
 
-        public bool isActive { get; set; }
+        
 
         //Department Navigation
         [ForeignKey("Department")]

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    public class Review
+    public class Review : Base
     {
         public int ReviewID { get; set; }
 

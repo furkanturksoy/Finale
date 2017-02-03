@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Finale.DAL.ORM.Entity
 {
-    public class Department
+    public class Department : Base
     {
 
         public int DepartmentID { get; set; }
@@ -17,6 +17,6 @@ namespace Finale.DAL.ORM.Entity
         public virtual List<Category> Categories { get; set; }
 
 
-        public bool isActive { get; set; }
+
     }
 }
