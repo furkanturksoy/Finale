@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,5 +9,21 @@ namespace Finale.DAL.ORM.Entity
 {
     class Category
     {
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
+        public string Description { get; set; }
+
+
+        public bool isActive { get; set; }
+
+        //Department Navigation
+        [ForeignKey("Department")]
+        public int DepartmentID { get; set; }
+        public virtual Department Department { get; set; }
+
+        // Product navigation
+
+        public virtual List<Product> Products { get; set; }
+
     }
 }
