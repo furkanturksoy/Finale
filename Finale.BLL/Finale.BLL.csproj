@@ -50,8 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\CategoryRepository.cs" />
-    <Compile Include="Repository\DepartmentRepository.cs" />
+    <Compile Include="Repository\BaseRepository\Base.cs" />
+    <Compile Include="Repository\EntityRepository\CategoryRepository.cs" />
+    <Compile Include="Repository\EntityRepository\CustomerRepository.cs" />
+    <Compile Include="Repository\EntityRepository\DepartmentRepository.cs" />
+    <Compile Include="Repository\EntityRepository\ItemRepository.cs" />
+    <Compile Include="Repository\EntityRepository\OrderRepository.cs" />
+    <Compile Include="Repository\EntityRepository\ProductRepository.cs" />
+    <Compile Include="Repository\EntityRepository\ReviewRepository.cs" />
+    <Compile Include="Repository\EntityRepository\ShoppingCartRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Finale.DAL\Finale.DAL.csproj">

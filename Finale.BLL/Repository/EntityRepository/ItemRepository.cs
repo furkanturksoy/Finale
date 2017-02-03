@@ -1,19 +1,14 @@
-﻿using Finale.DAL.ORM.Context;
+﻿using Finale.BLL.Repository.BaseRepository;
 using Finale.DAL.ORM.Entity;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Finale.BLL.Repository
+namespace Finale.BLL.Repository.EntityRepository
 {
-    class CategoryRepository
+    class ItemRepository : Base<Item>
     {
-       
-
-
     }
 }
