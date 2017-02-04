@@ -9,7 +9,18 @@ namespace Finale.DAL.ORM.Entity
 {
     public class Review : Base
     {
-        public int ReviewID { get; set; }
+        public override int ID
+        {
+            get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
 
         public string ReviewContent { get; set; }
 

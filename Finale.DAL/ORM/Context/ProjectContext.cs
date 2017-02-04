@@ -12,7 +12,7 @@ namespace Finale.DAL.ORM.Context
     {
         public ProjectContext()
         {
-            Database.Connection.ConnectionString = @"Server=ASUS-BILGISAYAR; Database=Finale; Integrated Security=yes;";
+            Database.Connection.ConnectionString = @"Server=ASUS-BILGISAYAR; Database=Finale1; Integrated Security=yes;";
         }
 
         public DbSet<Category> Categories { get; set; }

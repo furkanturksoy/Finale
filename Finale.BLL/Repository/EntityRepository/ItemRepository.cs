@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Finale.BLL.Repository.EntityRepository
 {
-    class ItemRepository : Base<Item>
+    public class ItemRepository : Base<Item>
     {
     }
 }

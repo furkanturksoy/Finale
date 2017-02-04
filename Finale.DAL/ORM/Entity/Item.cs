@@ -10,8 +10,18 @@ namespace Finale.DAL.ORM.Entity
 {
     public class Item : Base
     {
-        [Key()]
-        public int ItemID { get; set; }
+        public override int ID
+        {
+            get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
 
         //Shopping Cart Navigation
         [ForeignKey("ShoppingCart")]

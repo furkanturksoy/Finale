@@ -10,10 +10,21 @@ namespace Finale.DAL.ORM.Entity
 {
     public class ShoppingCart : Base
     {
-        
+
         [Key()]
         [ForeignKey("Customer")]
-        public int CustomerID { get; set; }
+        public override int ID
+        {
+            get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
         public virtual Customer Customer { get; set; } // both primary and foreign key child of customer
 
         public virtual List<Order> OrdersFromCart { get; set; } // navigation for orders

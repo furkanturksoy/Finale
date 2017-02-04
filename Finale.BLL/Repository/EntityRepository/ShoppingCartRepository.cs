@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Finale.BLL.Repository.EntityRepository
 {
-    class ShoppingCartRepository : Base<ShoppingCart>
+    public class ShoppingCartRepository : Base<ShoppingCart>
     {
     }
 }

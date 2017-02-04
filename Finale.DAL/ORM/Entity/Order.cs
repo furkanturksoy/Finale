@@ -12,10 +12,21 @@ namespace Finale.DAL.ORM.Entity
     {
         [Key()]
         [ForeignKey("Item")]
-        public int OrderID { get; set; }
+        public override int ID
+        {
+            get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
 
 
-       
+
         public Item Item { get; set; }
 
         // Order State will be added later

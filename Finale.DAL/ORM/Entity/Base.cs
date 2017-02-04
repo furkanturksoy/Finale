@@ -8,6 +8,13 @@ namespace Finale.DAL.ORM.Entity
 {
     public class Base
     {
+        public virtual int ID { get; set; }
         public bool isActive { get; set; }
+        public virtual string Name { get; set; }
+                                           // DateTime
+
+
     }
+
+    
 }

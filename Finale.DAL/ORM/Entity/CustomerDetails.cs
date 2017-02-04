@@ -10,9 +10,22 @@ namespace Finale.DAL.ORM.Entity
 {
     public class CustomerDetails : Base
     {
-        [Key()]
+        [Key]
         [ForeignKey("Customer")]
-        public int CustomerID { get; set; }
+        public override int ID
+        {
+            get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
+
+
         public virtual Customer Customer { get; set; }
 
         public string FirstName { get; set; }

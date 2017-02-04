@@ -8,11 +8,22 @@ namespace Finale.DAL.ORM.Entity
 {
     public class Customer : Base
     {
-        public int CustomerID { get; set; }
+        public override int ID
+        {
+            get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
 
         public string UserName { get; set; }
         public string Password { get; set; }
-
+        
         public virtual CustomerDetails CustomerDetails { get; set; }
 
         //ShoppingCart Navigation
@@ -20,5 +31,9 @@ namespace Finale.DAL.ORM.Entity
 
         // Orders Navigation
         public virtual List<Order> Orders { get; set; }
+
+
     }
+
+    
 }

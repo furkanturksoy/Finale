@@ -9,8 +9,31 @@ namespace Finale.DAL.ORM.Entity
 {
     public class Category : Base
     {
-        public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
+
+        public override int ID
+        {
+           get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
+        public override string Name
+        {
+            get
+            {
+                return base.Name;
+            }
+
+            set
+            {
+                base.Name = value;
+            }
+        }
         public string Description { get; set; }
 
 

@@ -9,8 +9,31 @@ namespace Finale.DAL.ORM.Entity
 {
     public class Product : Base
     {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
+      
+        public override int ID
+        {
+            get
+            {
+                return base.ID;
+            }
+
+            set
+            {
+                base.ID = value;
+            }
+        }
+        public override string Name
+        {
+            get
+            {
+                return base.Name;
+            }
+
+            set
+            {
+                base.Name = value;
+            }
+        }
         public string Description { get; set; }
         public decimal Price { get; set; }
 
