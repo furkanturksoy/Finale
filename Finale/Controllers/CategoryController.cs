@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace Finale.Controllers
 {
     [Route("Categories")]
-    public class CategoryController : Controller
+    public class CategoryController : BaseController
     {
         
         [Route("")]

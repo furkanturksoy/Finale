@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace Finale.Controllers
 {
     [Route("Products")]
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         [Route("{name}")]
         public ActionResult Index(string name)

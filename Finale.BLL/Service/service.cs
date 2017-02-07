@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Finale.BLL.Service
 {
-    class service
+    public class service
     {
         public service()
         {

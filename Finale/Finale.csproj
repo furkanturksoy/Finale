@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -146,9 +147,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Finale.BLL\Finale.BLL.csproj">
+      <Project>{255110f4-cd9b-439b-a837-d0b0715478bc}</Project>
+      <Name>Finale.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Finale.DAL\Finale.DAL.csproj">
+      <Project>{b1733220-c8bc-4a9e-b8b8-363118c32429}</Project>
+      <Name>Finale.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
