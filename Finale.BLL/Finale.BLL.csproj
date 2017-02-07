@@ -59,6 +59,7 @@
     <Compile Include="Repository\EntityRepository\ProductRepository.cs" />
     <Compile Include="Repository\EntityRepository\ReviewRepository.cs" />
     <Compile Include="Repository\EntityRepository\ShoppingCartRepository.cs" />
+    <Compile Include="Service\service.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Finale.DAL\Finale.DAL.csproj">

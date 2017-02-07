@@ -10,5 +10,6 @@ namespace Finale.BLL.Repository.EntityRepository
 {
     public class DepartmentRepository : Base<Department>
     {
+
     }
 }
