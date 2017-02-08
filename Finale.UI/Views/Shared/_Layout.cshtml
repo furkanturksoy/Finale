@@ -11,36 +11,18 @@
 
 <body>
     <div id="container">
-        <header>
-            <div id="inside-nav">
-                <a href="#" id="logo">Ecommerce.</a>
-                <div id="search">
-                    <form>
-                        <input type="text" name="" value="search">
-                    </form>
-                </div>
-                <div id="nav-list">
-                    <ul>
-                        <li><a href="">Departments</a></li>
-                        <li><a href="">Register</a></li>
-                        <li><a href="">Log In</a></li>
-                        <li id="Shopping"><a href="">Shopping Cart</a></li>
-                    </ul>
-                </div>
-
-                <div class="clean"></div>
-            </div>
-        </header>
+       @Html.Partial("_banner.cshtml")
         <div>
             @RenderBody()
         </div>
 
 
-            <footer>
-
-
-            </footer>
+           
+        @Html.Partial("_footer.cshtml")
         </div>
+
+    rendering sections here
+    @RenderSection("Scripts", false)
 
 </body>
 </html>
