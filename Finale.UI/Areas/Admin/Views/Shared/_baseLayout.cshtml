@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        #container {
+            width: 980px;
+            height: auto;
+            margin: auto;
+        }
+
+        #side-nav {
+            background-color: #232f3e;
+            height: 600px;
+            width: 150px;
+        }
+
+            #side-nav li {
+                list-style: none;
+                padding: 5px;
+                padding-left: 0px;
+                margin-bottom: 15px;
+            }
+
+                #side-nav li a {
+                    text-decoration: none;
+                    color: white;
+                    text-align: center;
+                }
+
+                    #side-nav li a:hover {
+                        background-color: darkgray;
+                    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="side-nav">
+            @Html.Partial("");
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
