@@ -60,7 +60,7 @@ namespace Finale.UI.Areas.Admin.Controllers
             Category category = service.CategoryService.GetOneByCondition(x => x.Name == categoryname);
             category.isActive = false;
             service.CategoryService.Save();
-            return View();
+            return Redirect("/admin/categories/list");
         }
 
 
@@ -70,7 +70,7 @@ namespace Finale.UI.Areas.Admin.Controllers
         {
             Category category = service.CategoryService.GetOneByCondition(x => x.Name == categoryname);
 
-            return View(category);
+            return View("~/Areas/Admin/Views/Category/categoryUpdate.cshtml", category);
         }
         [Route("admin/categories/{categoryname}/update")]
         [HttpPost]
@@ -80,7 +80,7 @@ namespace Finale.UI.Areas.Admin.Controllers
             updated.Name = category.Name;
             updated.Description = category.Description;
             service.CategoryService.Save();
-            return View();
+            return Redirect("/admin/categories/list");
         }
 
 

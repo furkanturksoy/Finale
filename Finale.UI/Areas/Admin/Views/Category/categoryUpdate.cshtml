@@ -1,10 +1,17 @@
-﻿
+﻿@model Finale.DAL.ORM.Entity.Category
 @{
     ViewBag.Title = "categoryUpdate";
     Layout = "~/Areas/Admin/Views/Category/Shared/_categoryLayout.cshtml";
 }
 
-<form>
-
+<form method="post" action="/admin/categories/@Model.Name/update">
+    <label>Category Name</label>
+    <input type="text"  value="@Model.Name" name="Name"/>
+    <br />
+    <br />
+    <label>Category Description</label>
+    <input type="text" value="@Model.Description" name="Description" />
+    <br />
+    <input type="submit" />
 </form>
 
