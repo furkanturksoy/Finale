@@ -1,0 +1,8 @@
+﻿@model List<Finale.UI.Areas.Admin.Models.CategoryDTO>
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Areas/Admin/Views/Category/Shared/_categoryLayout.cshtml";
+}
+
+@Html.Partial("~/Areas/Admin/Views/Category/Shared/_list.cshtml", Model)
+

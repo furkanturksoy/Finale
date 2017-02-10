@@ -11,7 +11,7 @@ namespace Finale.BLL.Service
     {
         public service()
         {
-            _departmentService = new DepartmentRepository();
+
             _categoryService = new CategoryRepository();
             _productService = new ProductRepository();
             _customerService = new CustomerRepository();
@@ -21,13 +21,7 @@ namespace Finale.BLL.Service
             _shoppingCartService = new ShoppingCartRepository();
         }
 
-        private DepartmentRepository _departmentService;
-
-        public DepartmentRepository DepartmentService
-        {
-            get { return _departmentService; }
-            set { _departmentService = value; }
-        }
+       
 
         private CategoryRepository _categoryService;
 

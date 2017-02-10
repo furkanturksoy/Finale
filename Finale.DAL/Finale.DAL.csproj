@@ -55,7 +55,6 @@
     <Compile Include="ORM\Entity\Category.cs" />
     <Compile Include="ORM\Entity\Customer.cs" />
     <Compile Include="ORM\Entity\CustomerDetails.cs" />
-    <Compile Include="ORM\Entity\Department.cs" />
     <Compile Include="ORM\Entity\Item.cs" />
     <Compile Include="ORM\Entity\Order.cs" />
     <Compile Include="ORM\Entity\Product.cs" />

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/Admin/content/style/layoutStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <div id="side-nav">
+            <div id="side-nav-content">
+                @Html.Partial("~/Areas/Admin/Views/Category/Shared/_navigationCategory.cshtml")
+            </div>
+        </div>
+        <div id="content">
+            <div id="content-inside">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="clear"></div>
+    </div>
+</body>
+</html>

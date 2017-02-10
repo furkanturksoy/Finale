@@ -38,12 +38,6 @@ namespace Finale.DAL.ORM.Entity
 
 
         
-
-        //Department Navigation
-        [ForeignKey("Department")]
-        public int DepartmentID { get; set; }
-        public virtual Department Department { get; set; }
-
         // Product navigation
 
         public virtual List<Product> Products { get; set; }
