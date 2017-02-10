@@ -69,17 +69,22 @@ namespace Finale.UI.Areas.Admin.Controllers
         public ActionResult UpdateCategory(string categoryname)
         {
             Category category = service.CategoryService.GetOneByCondition(x => x.Name == categoryname);
+            CategoryDTO updated = new CategoryDTO();
+            updated.Name = category.Name;
+            updated.Description = category.Description;
 
-            return View("~/Areas/Admin/Views/Category/categoryUpdate.cshtml", category);
+            return View("~/Areas/Admin/Views/Category/categoryUpdate.cshtml", updated);
         }
         [Route("admin/categories/{categoryname}/update")]
         [HttpPost]
         public ActionResult UpdateCategoryPost(CategoryDTO category, string categoryname)
         {
+            if (ModelState.IsValid) { 
             Category updated = service.CategoryService.GetOneByCondition(x => x.Name == categoryname);
             updated.Name = category.Name;
             updated.Description = category.Description;
             service.CategoryService.Save();
+            }
             return Redirect("/admin/categories/list");
         }
 
