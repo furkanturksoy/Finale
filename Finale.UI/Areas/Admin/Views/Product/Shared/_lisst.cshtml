@@ -1,8 +1,9 @@
-﻿@model  List<Finale.UI.Areas.Admin.Models.CategoryDTO>
+﻿@model Finale.UI.Areas.Admin.Models.VM.Category_Products_VM
 
 
 <ul style="padding:5px">
-    @foreach (var item in Model)
+    @if(Model.Products != null) { 
+    foreach (var item in Model.Products)
     {
 
         <li style="list-style:none; margin-top:15px;">
@@ -15,6 +16,10 @@
             </div>
         </li>
 
+        }
+    }else
+    {
+        <li>hello world</li>
     }
 </ul>
  

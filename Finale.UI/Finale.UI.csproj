@@ -151,9 +151,10 @@
     <Content Include="Areas\Admin\Views\Category\categoryUpdate.cshtml" />
     <Content Include="Areas\Admin\Views\Category\categoryAdd.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Shared\_productLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Shared\_list.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Shared\_lisst.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Shared\_navigationProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Products.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\addProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

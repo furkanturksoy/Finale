@@ -1,10 +1,10 @@
-﻿
+﻿@model Finale.UI.Areas.Admin.Models.VM.Category_Products_VM
 @{
     ViewBag.Title = "Products";
     Layout = "~/Areas/Admin/Views/Product/Shared/_productLayout.cshtml";
 }
 
-Hello World
+@Html.Partial("~/Areas/Admin/Views/Product/Shared/_lisst.cshtml", Model)
 
 @section Script{
     <script>

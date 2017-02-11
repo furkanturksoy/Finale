@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "addProduct";
+    Layout = "~/Areas/Admin/Views/Product/Shared/_productLayout.cshtml";
+}
+
+<form>
+    <label>Product Name</label>
+    <input type="text" name="Name" />
+    <br />
+    <label>Description</label>
+    <input type="text" name="Description" />
+    <br />
+    <label>Category Name</label>
+    <input type="text" name="CategoryName"/>
+    <br />
+    <label>Price</label>
+    <input type="number" name="Price"/>
+    <br />
+    <input type="submit" value="Click" />
+</form>
+
+
+@section Script{
+    <script>
+        function show() {
+            document.getElementById("dropdown-content").classList.toggle("show");
+        }
+    </script>
+
+}
+
+@section Custom{
+    <style>
+        button {
+            padding: 0px !important;
+            background-color: darkorange;
+            width: 75px !important;
+            height: 20px;
+        }
+
+        #dropdown-content {
+            display: none;
+            width: 100px;
+            min-height: 60px;
+            background-color: darkgrey;
+        }
+
+            #dropdown-content ul {
+                padding: 0px;
+            }
+
+                #dropdown-content ul li {
+                    list-style: none;
+                }
+
+        .show {
+            display: block !important;
+        }
+    </style>
+}

@@ -1,4 +1,4 @@
-﻿@model List<Finale.UI.Areas.Admin.Models.CategoryDTO>
+﻿@model Finale.UI.Areas.Admin.Models.VM.Category_Products_VM
 <!DOCTYPE html>
 
 <html>
@@ -12,7 +12,8 @@
     <div id="container">
         <div id="side-nav">
             <div id="side-nav-content">
-                @Html.Partial("~/Areas/Admin/Views/Product/Shared/_navigationProduct.cshtml", Model)
+                @Html.Partial("~/Areas/Admin/Views/Product/Shared/_navigationProduct.cshtml",Model.Categories)
+                
             </div>
         </div>
         <div id="content">
