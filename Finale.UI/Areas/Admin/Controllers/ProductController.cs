@@ -31,15 +31,52 @@ namespace Finale.UI.Areas.Admin.Controllers
             
 
         }
-        [Route("admin/products/list/{categoryname}")]
-        public ActionResult ProductsC(string categoryname)
+        [Route("admin/products/list/{categoryname}/{isactive?}")]
+        public ActionResult ProductsC(string categoryname, string isactive)
         {
             var model = service.CategoryService.GetAll().Select(x => new CategoryDTO()
             {
                 Name = x.Name
             }).ToList();
+            List<ProductDTO> productmodel;
 
-            return View();
+            if (string.IsNullOrEmpty(isactive)) { 
+            productmodel = service.ProductService.GetAll().Where(x => x.Category.Name == categoryname).Select(x => new ProductDTO()
+            {
+                Name = x.Name,
+                Description = x.Description,
+                isActive = x.isActive
+
+
+            }).ToList();
+            }else if(isactive == "true")
+            {
+                productmodel = service.ProductService.GetActive().Where(x => x.Category.Name == categoryname).Select(x => new ProductDTO()
+                {
+                    Name = x.Name,
+                    Description = x.Description,
+                    isActive = x.isActive
+
+
+                }).ToList();
+            }else
+            {
+                productmodel = service.ProductService.GetDisabled().Where(x => x.Category.Name == categoryname).Select(x => new ProductDTO()
+                {
+                    Name = x.Name,
+                    Description = x.Description,
+                    isActive = x.isActive
+
+
+                }).ToList();
+            }
+
+            Category_Products_VM vm = new Category_Products_VM();
+            vm.Categories = model;
+            vm.Products = productmodel;
+
+            ViewBag.CategoryName = categoryname;
+            return View("~/Areas/Admin/Views/Product/productByCategory.cshtml", vm);
 
            
 
@@ -55,11 +92,7 @@ namespace Finale.UI.Areas.Admin.Controllers
 
             
 
-            Category_Products_VM vm = new Category_Products_VM();
-            vm.Categories = model;
-            vm.Products = null;
-
-            return View("~/Areas/Admin/Views/Product/addProduct.cshtml", vm);
+            return View("~/Areas/Admin/Views/Product/addProduct.cshtml", model);
         }
 
         [HttpPost]
@@ -77,7 +110,7 @@ namespace Finale.UI.Areas.Admin.Controllers
                 service.ProductService.Add(prod);
                 
             
-            return Redirect("/admin/products/list");
+            return Redirect("/admin/products/list/" + product.CategoryName);
 
         }
 

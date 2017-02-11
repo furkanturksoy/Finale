@@ -13,6 +13,7 @@ namespace Finale.UI.Areas.Admin.Models.DTO
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public decimal Price { get; set; }
+        public bool isActive { get; set; }
 
     }
 }
