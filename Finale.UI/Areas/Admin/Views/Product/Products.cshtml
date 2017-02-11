@@ -1,49 +1,58 @@
-﻿@model Finale.UI.Areas.Admin.Models.VM.Category_Products_VM
+﻿@model List<Finale.UI.Areas.Admin.Models.CategoryDTO>
+
 @{
     ViewBag.Title = "Products";
     Layout = "~/Areas/Admin/Views/Product/Shared/_productLayout.cshtml";
 }
 
-@Html.Partial("~/Areas/Admin/Views/Product/Shared/_lisst.cshtml", Model)
+hello world
 
-@section Script{
+@section CategoryList
+    {
+    <li>
+        <button onclick="show()">Categories</button>
+        <ul id="dropdown-content">
+            @foreach(var item in Model)
+            {
+                <li><a href="">@item.Name</a></li>
+            }
+        </ul>
+    </li>
+    }
+
+@section Css{
+    <style>
+        .show{
+            display:block !important;
+        }
+        #dropdown-content li {
+            list-style:none;
+        }
+        #dropdown-content li a{
+            color: yellow !important;
+            text-decoration:none;
+
+        }
+         #dropdown-content li a:hover{
+             background-color:darkgrey;
+         }
+
+        #dropdown-content{
+            width:100px;
+            min-height:120px;
+            background-color:#232f3e;
+            display:none;
+        }
+    </style>
+    }
+
+@section Scripts{
     <script>
+        var dropdown = document.getElementById("dropdown-content");
+
         function show() {
-            document.getElementById("dropdown-content").classList.toggle("show");
+            dropdown.classList.toggle("show");
         }
     </script>
-    
-    }
 
-@section Custom{
-<style>
-    button {
-        padding: 0px !important;
-        background-color: darkorange;
-        width: 75px !important;
-        height: 20px;
-    }
-
-    #dropdown-content {
-        display: none;
-        width: 100px;
-        min-height: 60px;
-        background-color: darkgrey;
-       
-    }
-
-        #dropdown-content ul {
-            padding: 0px;
-
-            
-        }
-
-            #dropdown-content ul li {
-                list-style: none;
-            }
-
-    .show {
-        display: block !important;
-    }
-</style>
     }

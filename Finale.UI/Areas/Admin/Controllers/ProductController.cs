@@ -15,53 +15,37 @@ namespace Finale.UI.Areas.Admin.Controllers
     {
         service service = new service();
 
-        [Route("admin/products/list/{categoryname?}")]
+        [Route("admin/products/index")]
         public ActionResult Products(string categoryname)
         {
-        
-            if(categoryname == null) { 
-            var model = service.CategoryService.GetAll().Select(x => new CategoryDTO()
-            {
-                Name = x.Name
-            }).ToList();
-                Category_Products_VM vm = new Category_Products_VM();
-                vm.Categories = model;
 
-                vm.Products = null;
-                return View("~/Areas/Admin/Views/Product/Products.cshtml", vm);
-            }else
-
-            {
+            
                 var model = service.CategoryService.GetAll().Select(x => new CategoryDTO()
                 {
                     Name = x.Name
                 }).ToList();
-
-                var productmodel = service.ProductService.GetAll().Where(x => x.Category.Name == categoryname).Select(x => new ProductDTO()
-
-                {
-                    Name = x.Name,
-                    Description = x.Description
-
-                }).ToList();
-                Category_Products_VM vm = new Category_Products_VM();
-                vm.Categories = model;
-                vm.Products = productmodel;
-                return View("~/Areas/Admin/Views/Product/Products.cshtml", vm);
+           
+                return View("~/Areas/Admin/Views/Product/Products.cshtml", model);
 
 
-            }
-
-
-
-
-
-
-
+            
 
         }
+        [Route("admin/products/list/{categoryname}")]
+        public ActionResult ProductsC(string categoryname)
+        {
+            var model = service.CategoryService.GetAll().Select(x => new CategoryDTO()
+            {
+                Name = x.Name
+            }).ToList();
 
-        [Route("admin/products/new/")]
+            return View();
+
+           
+
+    }
+
+    [Route("admin/products/new/")]
         public ActionResult NewProduct(string categoryname)
         {
             var model = service.CategoryService.GetAll().Select(x => new CategoryDTO()
@@ -82,18 +66,27 @@ namespace Finale.UI.Areas.Admin.Controllers
         [Route("admin/products/new")]
         public ActionResult NewProduct(ProductDTO product)
         {
-            if (ModelState.IsValid)
-            {
+    
                 Product prod = new Product();
                 prod.isActive = true;
                 prod.Name = product.Name;
                 prod.Price = product.Price;
                 prod.Description = product.Description;
-                prod.CategoryID = service.CategoryService.GetOneByCondition(x => x.Name == product.Name).ID;
+                prod.CategoryID = service.CategoryService.GetOneByCondition(x => x.Name == product.CategoryName).ID;
 
                 service.ProductService.Add(prod);
-            }
+                
+            
             return Redirect("/admin/products/list");
+
+        }
+
+        [Route("admin/products/{productname}/update")]
+        public ActionResult updateProduct(string productname)
+        {
+            var updated = service.ProductService.GetOneByCondition(x => x.Name == productname);
+
+            return View("");
         }
 
 

@@ -1,19 +1,22 @@
-﻿@model Finale.UI.Areas.Admin.Models.VM.Category_Products_VM
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Areas/Admin/content/style/layoutStyle.css" rel="stylesheet" />
-    @RenderSection("Custom",false)
+    @RenderSection("Css",false)
 </head>
 <body>
     <div id="container">
         <div id="side-nav">
             <div id="side-nav-content">
-                @Html.Partial("~/Areas/Admin/Views/Product/Shared/_navigationProduct.cshtml",Model.Categories)
-                
+                <ul>
+                    <li><a href="/admin/home/index">Admin Panel</a><li>
+                    <li><a href="/admin/products/list">Product Panel</a></li>
+                    <li><a href="/admin/products/new">New Product</a></li>
+                    @RenderSection("CategoryList", false)
+                </ul>
             </div>
         </div>
         <div id="content">
@@ -23,6 +26,6 @@
         </div>
         <div id="clear"></div>
     </div>
-    @RenderSection("Script",false)
+    @RenderSection("Scripts",false)
 </body>
 </html>
