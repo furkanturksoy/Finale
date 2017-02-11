@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Areas/Admin/Views/Product/Shared/_productLayout.cshtml";
+}
+
+Hello World
+
+@section Script{
+    <script>
+        function show() {
+            document.getElementById("dropdown-content").classList.toggle("show");
+        }
+    </script>
+    
+    }
+
+@section Custom{
+<style>
+    button {
+        padding: 0px !important;
+        background-color: darkorange;
+        width: 75px !important;
+        height: 20px;
+    }
+
+    #dropdown-content {
+        display: none;
+        width: 100px;
+        min-height: 60px;
+        background-color: darkgrey;
+       
+    }
+
+        #dropdown-content ul {
+            padding: 0px;
+
+            
+        }
+
+            #dropdown-content ul li {
+                list-style: none;
+            }
+
+    .show {
+        display: block !important;
+    }
+</style>
+    }

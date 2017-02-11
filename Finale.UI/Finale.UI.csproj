@@ -128,6 +128,8 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Models\DTO\CategoryDTO.cs" />
+    <Compile Include="Areas\Admin\Models\DTO\ProductDTO.cs" />
+    <Compile Include="Areas\Admin\Models\VM\Category_Products_VM.cs" />
     <Compile Include="Areas\Admin\Models\VM\Category_Page_VM.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -148,6 +150,10 @@
     <Content Include="Areas\Admin\Views\Category\Categories.cshtml" />
     <Content Include="Areas\Admin\Views\Category\categoryUpdate.cshtml" />
     <Content Include="Areas\Admin\Views\Category\categoryAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Shared\_productLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Shared\_list.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Shared\_navigationProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Products.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -158,7 +164,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Admin\" />
-    <Folder Include="Areas\Admin\Views\Product\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

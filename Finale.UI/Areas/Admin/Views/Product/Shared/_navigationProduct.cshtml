@@ -1,0 +1,50 @@
+﻿@model List<Finale.UI.Areas.Admin.Models.CategoryDTO>
+
+<ul>
+    <li><a href="/admin/home/index">Admin Panel</a></li>
+    <li><a href="/admin/categories/new">New Category</a></li>
+    <li>
+        <button onclick="show()">Categories</button>
+        <div id="dropdown-content">
+            <ul>
+                @foreach(var item in Model)
+                {
+                    <li><a href="">@item.Name</a></li>
+                }
+            </ul>
+        </div>
+    </li>
+</ul>
+
+
+<style>
+    button{
+        padding:0px !important;
+        background-color:darkorange;
+        width: 40px;
+        height: 20px;
+
+    }
+
+    #dropdown-content{
+        display:none;
+        width: 120px;
+        min-height : 60px;
+        background-color:darkgrey;
+
+
+    }
+
+    #dropdown-content ul{
+        padding:5px;
+        align-content:center;
+    }
+
+    #dropdown-content ul li {
+        list-style:none;
+    }
+
+    .show{
+        display:block !important;
+    }
+</style>

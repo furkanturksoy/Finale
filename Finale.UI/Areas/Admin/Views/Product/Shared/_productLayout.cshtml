@@ -1,0 +1,27 @@
+﻿@model List<Finale.UI.Areas.Admin.Models.CategoryDTO>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/Admin/content/style/layoutStyle.css" rel="stylesheet" />
+    @RenderSection("Custom",false)
+</head>
+<body>
+    <div id="container">
+        <div id="side-nav">
+            <div id="side-nav-content">
+                @Html.Partial("~/Areas/Admin/Views/Product/Shared/_navigationProduct.cshtml", Model)
+            </div>
+        </div>
+        <div id="content">
+            <div id="content-inside">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="clear"></div>
+    </div>
+    @RenderSection("Script",false)
+</body>
+</html>

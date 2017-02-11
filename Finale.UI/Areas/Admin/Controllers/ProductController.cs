@@ -12,15 +12,22 @@ namespace Finale.UI.Areas.Admin.Controllers
     {
         service service = new service();
 
-        [Route("admin/products/list")]
-        public ActionResult Products()
+        [Route("admin/products/list/{categoryname?}")]
+        public ActionResult Products(string categoryname)
         {
+            if(categoryname == null) { 
             var model = service.CategoryService.GetAll().Select(x => new CategoryDTO()
             {
                 Name = x.Name
             }).ToList();
 
             return View("~/Areas/Admin/Views/Product/Products.cshtml", model);
+            }else
+            {
+
+            }
         }
+
+       
     }
 }
