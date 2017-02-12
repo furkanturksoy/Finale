@@ -32,7 +32,7 @@ namespace Finale.UI.Controllers
 
         public ActionResult LogOff()
         {
-            
+            return View();
         }
     }
 }

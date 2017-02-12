@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\content\style\layoutStyle.css" />
+    <Content Include="Content\css\custom.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -161,6 +162,7 @@
     <Content Include="Areas\Admin\Views\Product\productByCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Product\addProduct.cshtml" />
     <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Views\Shared\_mainLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,13 +176,11 @@
     <Folder Include="Areas\User\Controllers\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
-    <Folder Include="Content\" />
     <Folder Include="Models\VM\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Product\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Finale.BLL\Finale.BLL.csproj">
