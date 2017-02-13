@@ -25,8 +25,15 @@
                     </li>
 
                     <li id="categories"><a href="">Categories</a></li>
-                    <li id="log-in"><a href="">Log In</a></li>
-                    <li id="register"><a href="">Register</a></li>
+
+                    @if (!ViewBag.Context.User.Identity.IsAuthenticated) {
+                    <li id="log-in"><a href="/account/login">Log In</a></li>
+                    <li id="register"><a href="/account/register">Register</a></li>
+                    }else if (ViewBag.Context.User.Identity.IsAuthenticated)
+                    {
+                    <li id="log-in"><a href="/account/logout">Log Out</a></li>
+                    <li id="register"><a href="">Shopping Cart</a></li>
+                    }
 
                 </ul>
             </div>

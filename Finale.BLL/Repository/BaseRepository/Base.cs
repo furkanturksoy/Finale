@@ -102,6 +102,11 @@ namespace Finale.BLL.Repository.BaseRepository
         {
             db.SaveChanges();
         }
+
+        public bool Any(Expression<Func<T, bool>> lambda)
+        {
+            return table.Any(lambda);
+        }
         #endregion
 
     }

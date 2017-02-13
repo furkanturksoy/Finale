@@ -27,7 +27,6 @@ namespace Finale.DAL.ORM.Entity
         }
         public virtual Customer Customer { get; set; } // both primary and foreign key child of customer
 
-        public virtual List<Order> OrdersFromCart { get; set; } // navigation for orders
 
         //item navigaton
         public virtual List<Item> Items { get; set; }

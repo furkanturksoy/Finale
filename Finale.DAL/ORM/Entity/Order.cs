@@ -28,6 +28,7 @@ namespace Finale.DAL.ORM.Entity
 
 
         public Item Item { get; set; }
+        public int ShoppingCartId { get; set; }
 
         // Order State will be added later
 

@@ -140,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Managers\AuthManager.cs" />
     <Compile Include="Models\DTO\UserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -163,6 +164,9 @@
     <Content Include="Areas\Admin\Views\Product\addProduct.cshtml" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Views\Shared\_mainLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -177,9 +181,7 @@
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Models\VM\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\Category\" />
-    <Folder Include="Views\Home\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
