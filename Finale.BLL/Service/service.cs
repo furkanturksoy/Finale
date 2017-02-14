@@ -16,7 +16,6 @@ namespace Finale.BLL.Service
             _productService = new ProductRepository();
             _customerService = new CustomerRepository();
             _itemService = new ItemRepository();
-            _orderService = new OrderRepository();
             _reviewService = new ReviewRepository();
             _shoppingCartService = new ShoppingCartRepository();
         }
@@ -53,14 +52,6 @@ namespace Finale.BLL.Service
         {
             get { return _itemService; }
             set { _itemService = value; }
-        }
-
-        private OrderRepository _orderService;
-
-        public OrderRepository OrderService
-        {
-            get { return _orderService; }
-            set { _orderService = value; }
         }
 
         private ReviewRepository _reviewService;

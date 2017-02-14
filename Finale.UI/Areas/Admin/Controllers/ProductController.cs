@@ -110,7 +110,7 @@ namespace Finale.UI.Areas.Admin.Controllers
                 service.ProductService.Add(prod);
                 
             
-            return Redirect("/admin/products/list/" + product.CategoryName);
+            return Redirect("/admin/products/index");
 
         }
 
@@ -122,6 +122,26 @@ namespace Finale.UI.Areas.Admin.Controllers
             return View("");
         }
 
+
+        [Route("admin/products/{productname}/activate")]
+        public ActionResult ActivateProduct(string productname)
+        {
+            Product product = service.ProductService.GetOneByCondition(x => x.Name == productname);
+            product.isActive = true;
+            service.ProductService.Save();
+
+            return Redirect("/admin/products/list/" + product.Category.Name + "/false");
+        }
+
+       
+        [Route("admin/products/{productname}/deactivate")]
+        public ActionResult DeactivateProduct(string productname)
+        {
+            Product product = service.ProductService.GetOneByCondition(x => x.Name == productname);
+            product.isActive = false;
+            service.ProductService.Save();
+            return Redirect("/admin/products/list/" + product.Category.Name + "/true");
+        }
 
     }
 }

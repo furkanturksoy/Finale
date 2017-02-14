@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\content\style\layoutStyle.css" />
+    <Content Include="Areas\User\content\style\layoutStyle.css" />
     <Content Include="Content\css\custom.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -132,6 +133,10 @@
     <Compile Include="Areas\Admin\Models\DTO\ProductDTO.cs" />
     <Compile Include="Areas\Admin\Models\VM\Category_Products_VM.cs" />
     <Compile Include="Areas\Admin\Models\VM\Category_Page_VM.cs" />
+    <Compile Include="Areas\User\Controllers\OrderController.cs" />
+    <Compile Include="Areas\User\Controllers\ShoppingCartController.cs" />
+    <Compile Include="Areas\User\Controllers\UserController.cs" />
+    <Compile Include="Areas\User\model\ItemListVM.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -167,6 +172,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Areas\User\Views\User\Shared\_userLayout.cshtml" />
+    <Content Include="Areas\User\Views\User\Panel.cshtml" />
+    <Content Include="Areas\User\Views\User\Details.cshtml" />
+    <Content Include="Areas\User\Views\User\updateDetails.cshtml" />
+    <Content Include="Areas\User\Views\ShoppingCart\Shared\_cartLayout.cshtml" />
+    <Content Include="Areas\User\Views\ShoppingCart\Cart.cshtml" />
+    <Content Include="Areas\User\Views\ShoppingCart\ItemList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -177,9 +189,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Admin\" />
-    <Folder Include="Areas\User\Controllers\" />
     <Folder Include="Areas\User\Models\" />
-    <Folder Include="Areas\User\Views\Shared\" />
+    <Folder Include="Areas\User\Views\Order\" />
     <Folder Include="Models\VM\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Product\" />

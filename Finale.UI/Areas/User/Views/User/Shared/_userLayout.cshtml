@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/User/content/style/layoutStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <div id="side-nav">
+            <div id="side-nav-content">
+                <ul>
+                    <li><a href="/index">Home Page</a></li>
+                    <li><a href="/user/panel/details">Account Details</a></li>
+                    <li><a href="/user/panel/orders">Your Orders</a></li>
+                    <li><a href="/user/panel/shoppingcart">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="content-inside">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="clear"></div>
+    </div>
+</body>
+</html>

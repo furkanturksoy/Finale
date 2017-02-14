@@ -27,10 +27,6 @@ namespace Finale.DAL.ORM.Entity
         [ForeignKey("ShoppingCart")]
         public int ShoppingCartID { get; set; }
         public virtual ShoppingCart ShoppingCart { get; set; }
-
-        // Order Navigation
-        public virtual Order Order { get; set; }
-
         // Product Navigation
 
         [ForeignKey("Product")]

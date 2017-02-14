@@ -31,21 +31,10 @@ namespace Finale.DAL.ORM.Entity
         //item navigaton
         public virtual List<Item> Items { get; set; }
 
-        private decimal _totalPrice;
-
-        public decimal TotalPrice
-        {
-            get { return _totalPrice; }
-            set
-            {
-                foreach (var item in Items)
-                {
-                    _totalPrice += item.Product.Price;
-                }
-            }
+       
                 
 
-            }
+            
         }
 
     }

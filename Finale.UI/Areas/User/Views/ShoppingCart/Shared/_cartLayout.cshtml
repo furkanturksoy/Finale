@@ -1,0 +1,37 @@
+﻿@RenderSection("sectio",false)
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/User/content/style/layoutStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <div id="side-nav">
+            <div id="side-nav-content">
+                <ul>
+                    <li><a href="/user/panel">Home Page</a></li>
+                    <li><a href="/user/panel/shoppingcart/itemlist">Item List</a></li>
+                    @if(Model is decimal) {
+                    <li><a>Total Price: @Model </a></li>
+                    }else
+                    {
+                     <li><a>Total Price: @Model.TotalPrice</a></li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="content-inside">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="clear"></div>
+    </div>
+</body>
+</html>

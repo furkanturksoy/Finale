@@ -30,7 +30,7 @@ namespace Finale.DAL.ORM.Entity
         public virtual ShoppingCart ShoppingCart { get; set; }
 
         // Orders Navigation
-        public virtual List<Order> Orders { get; set; }
+
 
 
     }

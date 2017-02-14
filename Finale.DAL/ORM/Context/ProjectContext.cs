@@ -19,7 +19,6 @@ namespace Finale.DAL.ORM.Context
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerDetails> CustomerDetails { get; set; }
         public DbSet<Item> Items { get; set; }
-        public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }

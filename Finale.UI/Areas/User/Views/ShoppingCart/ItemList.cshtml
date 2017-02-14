@@ -1,0 +1,17 @@
+﻿@section sectio{
+    @model Finale.UI.Areas.User.model.ItemListVM
+    }
+@{
+    ViewBag.Title = "ItemList";
+    Layout = "~/Areas/User/Views/ShoppingCart/Shared/_cartLayout.cshtml";
+}
+
+@if(Model.Items.Count > 0){
+foreach(var item in Model.Items)
+{
+    <li><a>Hello World</a></li>
+    }
+}else
+{
+    <p>No items in your cart</p>
+}
