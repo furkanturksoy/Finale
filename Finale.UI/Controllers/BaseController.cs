@@ -9,9 +9,10 @@ namespace Finale.UI.Controllers
 {
     public class BaseController : Controller
     {
+        public FinaleContext service;
         public BaseController()
         {
-            FinaleContext service = new FinaleContext();
+             service = new FinaleContext();
         }
 
 

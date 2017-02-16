@@ -1,0 +1,55 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="container">
+
+        <header>
+            <div id="header-content">
+                <ul id="ul">
+                    <li id="logo">Ecommerce</li>
+                    <li style="padding-left:20px !important; padding-right:0px !important;" id="search">
+                        <input type="search" placeholder="search">
+                    </li>
+                    <li style="padding:0px !important; display: inline;">
+                        <input type="submit">
+                    </li>
+
+                    <li id="categories"><a href="">Categories</a></li>
+
+                    @if (!ViewBag.Context.User.Identity.IsAuthenticated) {
+                    <li id="log-in"><a href="/account/login">Log In</a></li>
+                    <li id="register"><a href="/account/register">Register</a></li>
+                    }else if (ViewBag.Context.User.Identity.IsAuthenticated)
+                    {
+                    <li id="log-in"><a href="/account/logout">Log Out</a></li>
+                    <li><a href="/user/panel">User Panel</a></li>
+                    }
+
+                </ul>
+            </div>
+        </header>
+
+
+        <div id="content">
+            @RenderBody()
+        </div>
+
+        <footer>
+            <div id="footer-content">
+                Hello world
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
