@@ -10,10 +10,9 @@ namespace Finale.UI.Controllers
     {
         [Route("index")]
         [Route("")]
-        public ActionResult Index()
+        public ActionResult Home()
         {
-            ViewBag.Context = HttpContext;
-            return View("~/Views/Home/Index.cshtml");
+            return View();
         }
     }
 }

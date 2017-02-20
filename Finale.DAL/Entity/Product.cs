@@ -24,6 +24,11 @@ namespace Finale.DAL.Entity
 
 
         public List<Order> Order { get; set; }
-        public List<ShoppingCart> ShoppingCart { get; set; }
+
+
+   
+
+        public List<ShoppingCart> ShoppingCarts { get; set; }
+
     }
 }

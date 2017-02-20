@@ -1,55 +1,71 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 
-    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    
+    
+
+    <link href="~/content/css/bottom-section/logo.css" rel="stylesheet" /> <!--main div logo-->
+    <link href="~/content/css/bottom-section/searchBar.css" rel="stylesheet" /> <!--main div search-bar-->
+    <link href="~/content/css/bottom-section/categoryDropdown.css" rel="stylesheet" /> <!--main div category-dropdown-->
+    <link href="~/content/css/bottom-section/signinModal.css" rel="stylesheet" /> <!--main div sign-in-->
+    <link href="~/content/css/bottom-section/registerModal.css" rel="stylesheet" /> <!--main div register-->
+
+    <link href="~/content/css/style.css" rel="stylesheet" />
+    <link href="~/content/css/bootstrap.min.css" rel="stylesheet" /> <!--some parts of bootstrap-->
+   
 
 </head>
 <body>
-    <div id="container">
-
+    <div id="wrapper">
         <header>
-            <div id="header-content">
-                <ul id="ul">
-                    <li id="logo">Ecommerce</li>
-                    <li style="padding-left:20px !important; padding-right:0px !important;" id="search">
-                        <input type="search" placeholder="search">
-                    </li>
-                    <li style="padding:0px !important; display: inline;">
-                        <input type="submit">
-                    </li>
+            <section id="top-section">
+                <div class="top-section">
+                    <p>Phone Orders : 1546849889  &nbsp  |  &nbsp Mail To :   <a href="#">Ecommerce@email.com</a></p>
+                </div>
+            </section> <!--Top section done-->
 
-                    <li id="categories"><a href="">Categories</a></li>
+            <section id="bottom-section">
+                <div id="container">
+                    @Html.Partial("~/Views/Shared/Header/bottomSection/_logoPartial.cshtml")
+                    @Html.Partial("~/Views/Shared/Header/bottomSection/_categoryPartial.cshtml")
+                    @Html.Partial("~/Views/Shared/Header/bottomSection/_searchBarPartial.cshtml")
 
-                    @if (!ViewBag.Context.User.Identity.IsAuthenticated) {
-                    <li id="log-in"><a href="/account/login">Log In</a></li>
-                    <li id="register"><a href="/account/register">Register</a></li>
-                    }else if (ViewBag.Context.User.Identity.IsAuthenticated)
+                    @if (!Context.User.Identity.IsAuthenticated) { 
+                        @Html.Partial("~/Views/Shared/Header/bottomSection/_signInPartial.cshtml")
+                        @Html.Partial("~/Views/Shared/Header/bottomSection/_registerPartial.cshtml")
+                    }else
                     {
-                    <li id="log-in"><a href="/account/logout">Log Out</a></li>
-                    <li><a href="/user/panel">User Panel</a></li>
+                        /*user panel and logout*/
                     }
+                </div>
+            </section>
 
-                </ul>
-            </div>
         </header>
-
-
+        <br />
+        <br />
+        <br />
+        <br />
+        
+            
         <div id="content">
             @RenderBody()
-        </div>
-
-        <footer>
-            <div id="footer-content">
-                Hello world
-            </div>
-        </footer>
-
+        </div> 
     </div>
+
+
+    <script src="~/content/js/categoryDropdown.js"></script>
+    <script src="~/content/js/registerModal.js"></script>
+    <script src="~/content/js/signinModal.js"></script>
+
+    @if (!Context.User.Identity.IsAuthenticated) {
+        <script src="~/content/Scripts/jquery-3.1.1.js"></script>
+        <script src = "~/content/ajax/signinAjax.js" ></script>
+        <script src = "~/content/ajax/registerAjax.js" ></script>
+    }
+
 </body>
 </html>

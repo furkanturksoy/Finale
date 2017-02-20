@@ -1,0 +1,26 @@
+﻿#category-dropdown-content{
+    display:none;
+    min-height: 45px;
+    width: 75px;
+    background-color:white;
+
+}
+
+#category-dropdown-content li {
+    list-style:none;
+    padding-top: 4px;
+
+}
+
+#category-dropdown a{
+    color: #7ec4e8;
+    text-decoration:none;
+    font-size:19px;
+    
+    
+}
+
+#category-dropdown-link{
+    padding-right:35px;
+    border-right:1px dotted darkgray;
+}

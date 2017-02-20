@@ -1,0 +1,16 @@
+﻿#search-bar #search-text {
+    float:left;
+    display:inline;
+    padding:0px;
+    margin: 0px;
+    width: 200px !important;
+    height: 25px;
+}
+
+#search-bar #search-button{
+    float:left;
+    padding:0px;
+    margin: 0px;
+    height: 25px;
+
+}
