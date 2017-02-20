@@ -13,6 +13,7 @@
     <link href="~/content/css/bottom-section/categoryDropdown.css" rel="stylesheet" /> <!--main div category-dropdown-->
     <link href="~/content/css/bottom-section/signinModal.css" rel="stylesheet" /> <!--main div sign-in-->
     <link href="~/content/css/bottom-section/registerModal.css" rel="stylesheet" /> <!--main div register-->
+    <link href="~/content/css/bottom-section/loader.css" rel="stylesheet" />
 
     <link href="~/content/css/style.css" rel="stylesheet" />
     <link href="~/content/css/bootstrap.min.css" rel="stylesheet" /> <!--some parts of bootstrap-->
@@ -63,9 +64,33 @@
 
     @if (!Context.User.Identity.IsAuthenticated) {
         <script src="~/content/Scripts/jquery-3.1.1.js"></script>
-        <script src = "~/content/ajax/signinAjax.js" ></script>
-        <script src = "~/content/ajax/registerAjax.js" ></script>
-    }
+        <script src="~/content/ajax/signinAjax.js"></script>
+        <script src="~/content/ajax/registerAjax.js"></script>
+
+        <script>
+
+            $(document).ready(function () {
+
+
+                function loader(loading,loadingContent, signform) {
+                    loadingContent.classList.add("loader-content");
+                    signform.classList.add("hide");
+                    loading.classList.add("show");
+                }
+
+                function loaderClose(loading, loadingContent, signform) {
+                    loadingContent.classList.remove("loader-content")                
+                    loading.classList.remove("show");
+                    signform.classList.remove("hide");
+                }
+
+
+                initializeSignIn(loader, loaderClose);
+
+            })
+
+        </script>
+    } 
 
 </body>
 </html>

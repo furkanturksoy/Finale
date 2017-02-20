@@ -145,6 +145,7 @@
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\bottom-section\categoryDropdown.css" />
+    <Content Include="content\css\bottom-section\loader.css" />
     <Content Include="content\css\bottom-section\logo.css" />
     <Content Include="content\css\bottom-section\registerModal.css" />
     <Content Include="content\css\bottom-section\searchBar.css" />

@@ -1,5 +1,10 @@
-﻿$(document).ready(function () {
+﻿function initializeSignIn(loader,loaderClose) {
 
+    var loading = document.getElementById("loader");
+    var loadingContent = document.getElementById("loader-content");
+    var signform = document.getElementById("sign-in-modal-content");
+
+    
 
     $("#sign-in-button").click(function (e) {
         e.preventDefault();
@@ -11,9 +16,16 @@
             type: 'POST',
             url: 'api/login',
             data: Data,
+            async: true,
+            beforeSend: loader(loading, loadingContent, signform),
             success: function (data) {
-                /*deal with it later*/
+                if (data) {
+                    setTimeout(function () { loaderClose(loading, loadingContent, signform) }, 2000);
+                }
+                
+                
             }
         })
     })
-})
+}
+

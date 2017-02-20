@@ -92,3 +92,7 @@ p,h1,h2,h3,h4,h5,span,li,ul,a,img,body{
 .show{
     display:block !important;
 } /*javascript toggle*/
+
+.hide{
+    display:none !important;
+}
