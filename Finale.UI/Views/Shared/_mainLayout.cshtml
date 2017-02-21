@@ -14,6 +14,7 @@
     <link href="~/content/css/bottom-section/signinModal.css" rel="stylesheet" /> <!--main div sign-in-->
     <link href="~/content/css/bottom-section/registerModal.css" rel="stylesheet" /> <!--main div register-->
     <link href="~/content/css/bottom-section/loader.css" rel="stylesheet" />
+    <link href="~/content/css/bottom-section/successMessage.css" rel="stylesheet" />
 
     <link href="~/content/css/style.css" rel="stylesheet" />
     <link href="~/content/css/bootstrap.min.css" rel="stylesheet" /> <!--some parts of bootstrap-->
@@ -81,11 +82,15 @@
                 function loaderClose(loading, loadingContent, signform) {
                     loadingContent.classList.remove("loader-content")                
                     loading.classList.remove("show");
-                    signform.classList.remove("hide");
+                }
+
+                function successMessage(success) {
+                    success.classList.add("show");
+                    setTimeout(function () { window.location = "index"; }, 1000)
                 }
 
 
-                initializeSignIn(loader, loaderClose);
+                initializeSignIn(loader, loaderClose, successMessage);
 
             })
 

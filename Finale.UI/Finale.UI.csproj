@@ -150,6 +150,7 @@
     <Content Include="content\css\bottom-section\registerModal.css" />
     <Content Include="content\css\bottom-section\searchBar.css" />
     <Content Include="content\css\bottom-section\signinModal.css" />
+    <Content Include="content\css\bottom-section\successMessage.css" />
     <Content Include="content\css\style.css" />
     <Content Include="content\img\blue-cart.gif" />
     <Content Include="content\img\cancel.png" />

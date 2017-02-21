@@ -1,8 +1,9 @@
-﻿function initializeSignIn(loader,loaderClose) {
+﻿function initializeSignIn(loader, loaderClose, successMessage) {
 
     var loading = document.getElementById("loader");
     var loadingContent = document.getElementById("loader-content");
     var signform = document.getElementById("sign-in-modal-content");
+    var successMsg = document.getElementById("success");
 
     
 
@@ -20,7 +21,10 @@
             beforeSend: loader(loading, loadingContent, signform),
             success: function (data) {
                 if (data) {
-                    setTimeout(function () { loaderClose(loading, loadingContent, signform) }, 2000);
+                    setTimeout(function () { loaderClose(loading, loadingContent, signform) }, 800);
+                    setTimeout(function () { successMessage(successMsg) }, 1000);
+                    
+
                 }
                 
                 
