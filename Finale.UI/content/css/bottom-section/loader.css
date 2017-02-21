@@ -9,6 +9,17 @@
     height: 250px;
 }
 
+#register-loader{
+    display:none;
+    background-color: #fefefe;
+    margin:auto;
+    margin-top : 150px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; 
+    height: 450px;
+}
+
 .loader-content{
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */

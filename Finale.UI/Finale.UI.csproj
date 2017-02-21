@@ -147,7 +147,7 @@
     <Content Include="content\css\bottom-section\categoryDropdown.css" />
     <Content Include="content\css\bottom-section\loader.css" />
     <Content Include="content\css\bottom-section\logo.css" />
-    <Content Include="content\css\bottom-section\registerModal.css" />
+    <Content Include="content\css\bottom-section\registeModal.css" />
     <Content Include="content\css\bottom-section\searchBar.css" />
     <Content Include="content\css\bottom-section\signinModal.css" />
     <Content Include="content\css\bottom-section\successMessage.css" />

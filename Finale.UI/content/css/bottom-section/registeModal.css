@@ -1,4 +1,4 @@
-﻿#register{ 
+#register{ 
     float:left;
 } /*main div*/
 
@@ -28,7 +28,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 400px; 
-    height: 650px;
+    height: 450px;
 }
 
 #register-cancel-image{

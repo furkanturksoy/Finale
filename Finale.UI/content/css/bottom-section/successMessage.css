@@ -9,6 +9,30 @@
     height: 250px;
 }
 
+#register-success{
+    display:none;
+    background-color: #fefefe;
+    margin:auto;
+    margin-top : 150px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; 
+    height: 400px;
+}
+
+
+
+#register-success-content{
+    display:none;
+    background-color: #fefefe;
+    margin:auto;
+    margin-top : 150px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; 
+    height: 400px;
+}
+
 #success-content{
     margin:auto;
     margin-top:70px;
