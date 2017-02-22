@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -147,10 +155,12 @@
     <Content Include="content\css\bottom-section\categoryDropdown.css" />
     <Content Include="content\css\bottom-section\loader.css" />
     <Content Include="content\css\bottom-section\logo.css" />
+    <Content Include="content\css\bottom-section\logout.css" />
     <Content Include="content\css\bottom-section\registeModal.css" />
     <Content Include="content\css\bottom-section\searchBar.css" />
-    <Content Include="content\css\bottom-section\signinModal.css" />
+    <Content Include="content\css\bottom-section\signinModa.css" />
     <Content Include="content\css\bottom-section\successMessage.css" />
+    <Content Include="content\css\bottom-section\user.css" />
     <Content Include="content\css\style.css" />
     <Content Include="content\img\blue-cart.gif" />
     <Content Include="content\img\cancel.png" />
@@ -198,7 +208,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountApiController.cs" />
+    <Compile Include="Controllers\AccountMvcController.cs" />
+    <Compile Include="Controllers\CategoryApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,7 +238,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\AccountController2\" />
     <Folder Include="Views\Shared\Header\topSection\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Finale.DAL\Finale.DAL.csproj">
+      <Project>{27a215f6-588c-4c0e-a19f-c84cad2f6b4d}</Project>
+      <Name>Finale.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

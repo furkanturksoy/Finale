@@ -1,0 +1,9 @@
+﻿#user-panel{ 
+    float:left;
+} /*main div*/
+
+#user-panel a{
+    text-decoration: none;
+    font-size: 19px;
+    color: #7ec4e8;
+}

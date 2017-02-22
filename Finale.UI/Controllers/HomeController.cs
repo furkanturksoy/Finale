@@ -8,10 +8,13 @@ namespace Finale.UI.Controllers
 {
     public class HomeController : Controller
     {
+
         [Route("index")]
         [Route("")]
         public ActionResult Home()
         {
+
+            ViewBag.Context = HttpContext.User;
             return View();
         }
     }

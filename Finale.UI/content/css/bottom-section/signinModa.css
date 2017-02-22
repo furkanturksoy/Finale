@@ -1,4 +1,4 @@
-﻿#sign-in{
+#sign-in{
 
     border-right : 1px dotted darkgray;
 } /*main div*/
@@ -22,7 +22,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 400px; 
-    height: 250px;
+    height: 280px;
 }
 
 #sign-in-modal{

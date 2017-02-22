@@ -1,0 +1,10 @@
+﻿#logout{
+
+    border-right : 1px dotted darkgray;
+} /*main div*/
+
+#logout a{
+    color:#7ec4e8 !important;
+    text-decoration: none;
+    font-size: 19px;
+}

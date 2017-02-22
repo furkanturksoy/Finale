@@ -1,9 +1,11 @@
-p,h1,h2,h3,h4,h5,span,li,ul,a,img,body{
+p,h1,h2,h3,h4,h5,span,li,ul,a,img,body,input,button{
     padding:0px;
     margin:0px;
 }
 
-
+#content p{
+    display:block;
+}
 
 #wrapper{
     width: 1152px;
@@ -55,6 +57,10 @@ p,h1,h2,h3,h4,h5,span,li,ul,a,img,body{
 
 }
 
+#bottom-section #category-dropdown-content{
+    position:absolute;
+}
+
 #bottom-section #sign-in{
     float:left !important;
     padding-left : 30px;
@@ -95,4 +101,18 @@ p,h1,h2,h3,h4,h5,span,li,ul,a,img,body{
 
 .hide{
     display:none !important;
+}
+
+#user-panel{
+    float:left !important;
+    padding-left : 30px;
+    padding-right : 20px;
+    border-right : 1px dotted darkgray;
+}
+
+#logout{
+    margin-left : 20px;
+    position: relative;
+    left:+30px;
+    float:left !important;
 }

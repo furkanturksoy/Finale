@@ -2,6 +2,8 @@
 
 <html>
 <head>
+
+    <script src="~/content/Scripts/jquery-3.1.1.js"></script>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 
@@ -11,9 +13,20 @@
     <link href="~/content/css/bottom-section/logo.css" rel="stylesheet" /> <!--main div logo-->
     <link href="~/content/css/bottom-section/searchBar.css" rel="stylesheet" /> <!--main div search-bar-->
     <link href="~/content/css/bottom-section/categoryDropdown.css" rel="stylesheet" /> <!--main div category-dropdown-->
-    <link href="~/content/css/bottom-section/signinModal.css" rel="stylesheet" /> <!--main div sign-in-->
-    <link href="~/content/css/bottom-section/registeModal.css" rel="stylesheet" />
+
+
+
+    
     <!--main div register-->
+    @if (ViewBag.Context.Identity.IsAuthenticated) {
+        <link href="~/content/css/bottom-section/user.css" rel="stylesheet" />
+        <link href="~/content/css/bottom-section/logout.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="~/content/css/bottom-section/signinModa.css" rel="stylesheet" /> <!--main div sign-in-->
+        <link href="~/content/css/bottom-section/registeModal.css" rel="stylesheet" />
+    }
     <link href="~/content/css/bottom-section/loader.css" rel="stylesheet" />
     <link href="~/content/css/bottom-section/successMessage.css" rel="stylesheet" />
 
@@ -37,12 +50,19 @@
                     @Html.Partial("~/Views/Shared/Header/bottomSection/_categoryPartial.cshtml")
                     @Html.Partial("~/Views/Shared/Header/bottomSection/_searchBarPartial.cshtml")
 
-                    @if (!Context.User.Identity.IsAuthenticated) { 
+                    @if (!ViewBag.Context.Identity.IsAuthenticated) { 
                         @Html.Partial("~/Views/Shared/Header/bottomSection/_signInPartial.cshtml")
                         @Html.Partial("~/Views/Shared/Header/bottomSection/_registerPartial.cshtml")
-                    }else
+                    }
+                    else
                     {
-                        /*user panel and logout*/
+                        <div id="user-panel">
+                            <a href="user/panel">@ViewBag.Context.Identity.Name.Split(',')[1]</a>
+                        </div>
+
+                        <div id="logout">
+                            <a href="account/logout">Log Out</a>
+                        </div>
                     }
                 </div>
             </section>
@@ -63,9 +83,10 @@
     <script src="~/content/js/categoryDropdown.js"></script>
     <script src="~/content/js/registerModal.js"></script>
     <script src="~/content/js/signinModal.js"></script>
+    
 
-    @if (!Context.User.Identity.IsAuthenticated) {
-        <script src="~/content/Scripts/jquery-3.1.1.js"></script>
+    @if (!ViewBag.Context.Identity.IsAuthenticated) {
+        
         <script src="~/content/ajax/signinAjax.js"></script>
         <script src="~/content/ajax/registerAjax.js"></script>
 
@@ -81,14 +102,16 @@
                 }
 
                 function loaderClose(loading, loadingContent, signform) {
-                    loadingContent.classList.remove("loader-content")                
+                    loadingContent.classList.remove("loader-content")
                     loading.classList.remove("show");
                 }
 
                 function successMessage(success) {
                     success.classList.add("show");
-                    setTimeout(function () { window.location = "index"; }, 1000)
+                    location.reload();
                 }
+
+                
 
 
                 initializeSignIn(loader, loaderClose, successMessage);
@@ -98,6 +121,24 @@
 
         </script>
     } 
+    
+    <script>
+    function loadCategories() {
+                    var categoryDropdown = $("#category-dropdown-content")
 
+                    $.ajax({
+                        type: 'GET',
+                        url: 'api/categories',
+                        success: function (data) {
+                            $(data).each(function (index, item) {
+                                categoryDropdown.append("<li>" + item + "</li>")
+                            })
+                        }
+
+                    })
+
+    }
+    loadCategories();
+    </script>
 </body>
 </html>

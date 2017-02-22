@@ -12,7 +12,7 @@ namespace Finale.DAL.Context
     {
         public FinaleContext()
         {
-            Database.Connection.ConnectionString = @"Server=ASUS-BILGISAYAR; Database=Finale2; Integrated Security=yes;";
+            Database.Connection.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Finale;Integrated Security=True;";
         }
 
         public DbSet<Category> Categorie { get; set; }
