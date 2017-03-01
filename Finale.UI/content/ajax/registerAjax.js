@@ -54,7 +54,7 @@
 
                     } else {
                         loaderClose(registerloader, loaderContent, registerForm)
-
+                        Address.after('<p color="green">Something went wrong please try again</p>')
                         registerForm.ClassList.add("show");
                         /*error message*/
                     }

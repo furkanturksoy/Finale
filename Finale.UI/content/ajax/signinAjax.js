@@ -39,10 +39,10 @@
                 if (data === true) {
                     loaderClose(loading, loadingContent, signform)
                     successMessage(successMsg)
+                    $("#sign-in-link").html("<p>photoscan</p>")
 
                 } else {
                     loaderClose(loading, loadingContent, signform)
-                    $("#password").after('<p style="color:green">' + data + '</p>')
                     signform.classList.add("show");
                     
                 }

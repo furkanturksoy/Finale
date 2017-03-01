@@ -8,13 +8,9 @@ using System.Web.Http;
 
 namespace Finale.UI.Controllers
 {
-    public class CategoryApiController : ApiController
+    public class CategoryApiController : baseApiController
     {
-        FinaleContext service;
-        public CategoryApiController()
-        {
-            service = new FinaleContext();
-        }
+
 
         [HttpGet]
         [Route("api/categories")]

@@ -146,6 +146,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\ajax\CategoriesAjax.js" />
     <Content Include="content\ajax\registerAjax.js" />
     <Content Include="content\ajax\signinAjax.js" />
     <Content Include="content\css\bootstrap-theme.css" />
@@ -209,9 +210,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountApiController.cs" />
-    <Compile Include="Controllers\AccountMvcController.cs" />
+    <Compile Include="Controllers\baseApiController.cs" />
     <Compile Include="Controllers\CategoryApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,6 +241,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\AccountController2\" />
+    <Folder Include="Views\Logout\" />
     <Folder Include="Views\Shared\Header\topSection\" />
   </ItemGroup>
   <ItemGroup>

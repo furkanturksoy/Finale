@@ -9,14 +9,11 @@ using System.Web.Security;
 
 namespace Finale.UI.Controllers
 {
-    public class AccountApiController : ApiController
+    public class AccountApiController : baseApiController
     {
 
-        FinaleContext service;
-        public AccountApiController()
-        {
-            service = new FinaleContext();
-        }
+        
+
 
         [HttpPost]
         [Route("account/login")]
@@ -59,6 +56,10 @@ namespace Finale.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(service.User.Any(x => x.UserName == registerCredentials.Username))
+                {
+                    return false;
+                }
                 Finale.DAL.Entity.User user = new DAL.Entity.User();
 
                 user.UserName = registerCredentials.Username;
@@ -90,6 +91,7 @@ namespace Finale.UI.Controllers
 
 
         }
+
 
         public class userCredentialsDTO
         {
